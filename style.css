@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1d2e; /* Dark, neutral background */
+    color: #e4e6eb; /* Light grey text for readability */
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background-color: #24273e; /* Dark blue-grey */
+    display: flex;
+    justify-content: space-between; /* Space between title and search bar */
+    align-items: center; /* Center align items vertically */
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #3b3f5c; /* Subtle border for separation */
+}
+
+header h1 {
+    color: #5c86ff; /* Bright blue for branding */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+header h1:hover {
+    color: #ff9800; /* Bright orange on hover for interactivity */
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+header form {
+    display: flex;
+    justify-content: flex-end;
+}
+nav a {
+    color: #e4e6eb;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+
+.search {
+    background-color: #1a1d2e;
+    border: 2px solid #3b3f5c;
+    border-radius: 50px;
+    color: #e4e6eb;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.search::placeholder {
+    color: #6c729a; /* Muted placeholder */
+}
+
+.search:focus {
+    background-color: #24273e;
+    border-color: #6c729a;
+    outline: none;
+}
+/* Main Section */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Movie Cards */
+.movie {
+    background-color: #24273e; /* Dark blue-grey card background */
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative; /* Add this line */
+    margin: 1rem;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.movie img {
+    width: 100%;
+    border-bottom: 3px solid #3b3f5c; /* Subtle border on image */
+}
+
+.movie-info {
+    color: #e4e6eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.movie-info h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.movie-info span {
+    background-color: #1a1d2e;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+}
+
+.movie-info span.green {
+    color: #4caf50; /* Bright green for high ratings */
+}
+
+.movie-info span.orange {
+    color: #ff9800; /* Warm orange for medium ratings */
+}
+
+.movie-info span.red {
+    color: #f44336; /* Red for low ratings */
+}
+
+/* Movie Overview */
+.overview {
+    background-color: #31354a; /* Slightly lighter for contrast */
+    color: #d1d5db; /* Softer grey text */
+    padding: 1.5rem;
+    position: absolute;
+    max-height: 100%;
+    overflow: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(101%);
+    transition: transform 0.4s ease-in-out;
+    border-top: 2px solid #3b3f5c; /* Subtle border */
+    font-size: 0.85rem;
+}
+
+.overview h3 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #e4e6eb; /* Text matches the main theme */
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+/* Footer Section */
+footer {
+    background-color: #24273e;
+    color: #e4e6eb;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer .social-links {
+    margin: 1rem 0;
+}
+
+footer .social-links a {
+    color: #5c86ff; /* Bright blue links */
+    text-decoration: none;
+    margin: 0 0.8rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-links a:hover {
+    color: #ff9800; /* Bright orange on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .movie {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
